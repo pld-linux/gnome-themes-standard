@@ -16,8 +16,8 @@ BuildRequires:	gtk+3-devel >= 3.0.0
 BuildRequires:	intltool >= 0.36.1
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.197
-Requires(post,postun):	gtk-update-icon-cache
+BuildRequires:	rpmbuild(macros) >= 1.311
+Requires(post):	gtk-update-icon-cache
 Requires:	gnome-icon-theme >= 2.91.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -54,12 +54,6 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%update_icon_cache Adwaita
-%update_icon_cache HighContrast
-%update_icon_cache HighContrastInverse
-%update_icon_cache LowContrast
-
-%postun
 %update_icon_cache Adwaita
 %update_icon_cache HighContrast
 %update_icon_cache HighContrastInverse
