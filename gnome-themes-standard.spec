@@ -2,7 +2,7 @@ Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
 Version:	3.0.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.0/%{name}-%{version}.tar.bz2
@@ -19,6 +19,7 @@ BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post):	gtk-update-icon-cache
 Requires:	gnome-icon-theme >= 2.91.0
+Obsoletes:	gnome-themes-LowContrast < 3.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,8 +43,8 @@ Domyślne motywy dla środowiska GNOME.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
+	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gtk-3.0/3.0.0/theming-engines/libadwaita.la
