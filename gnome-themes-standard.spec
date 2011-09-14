@@ -12,8 +12,9 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
 BuildRequires:	glib2-devel
-BuildRequires:	gtk+3-devel >= 3.0.9
+BuildRequires:	gtk+3-devel >= 3.1.18
 BuildRequires:	intltool >= 0.40
+BuildRequires:	librsvg-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.311
