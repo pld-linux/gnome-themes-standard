@@ -1,24 +1,26 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.0.2
-Release:	2
+Version:	3.2.0.2
+Release:	1
 License:	LGPL
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.0/%{name}-%{version}.tar.bz2
-# Source0-md5:	f6c1c7063a9f7ff3703a5d02248abb4a
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.2/%{name}-%{version}.tar.xz
+# Source0-md5:	3ee05d89970a74ee52bf8fb2df969d55
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
-BuildRequires:	glib2-devel
-BuildRequires:	gtk+3-devel >= 3.0.9
+BuildRequires:	gtk+3-devel >= 3.1.18
 BuildRequires:	intltool >= 0.40
+BuildRequires:  librsvg-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.311
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires(post):	gtk-update-icon-cache
-Requires:	gnome-icon-theme >= 2.91.0
+Requires:	gnome-icon-theme >= 3.0.0
 Obsoletes:	gnome-themes-LowContrast < 3.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,7 +57,6 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%update_icon_cache Adwaita
 %update_icon_cache HighContrast
 %update_icon_cache HighContrastInverse
 %update_icon_cache LowContrast
