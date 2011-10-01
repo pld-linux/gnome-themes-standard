@@ -1,7 +1,3 @@
-# TODO
-# - post snippet not needed?
-#  12:gnome-themes-standard  ########################################### [ 80%]
-# gtk-update-icon-cache: No theme index file.
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
