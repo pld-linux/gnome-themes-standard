@@ -1,7 +1,7 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.3.90
+Version:	3.3.91
 Release:	1
 License:	LGPL
 Group:		Themes
@@ -20,7 +20,7 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post):	gtk-update-icon-cache
-Requires:	gnome-icon-theme >= 3.0.0
+Requires:	gnome-icon-theme >= 3.3.0
 Obsoletes:	gnome-themes-HighContrast < 3.0-1
 Obsoletes:	gnome-themes-HighContrastInverse < 3.0-1
 Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
