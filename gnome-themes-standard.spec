@@ -1,12 +1,12 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.5.90.1
+Version:	3.5.91
 Release:	1
 License:	LGPL
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.5/%{name}-%{version}.tar.xz
-# Source0-md5:	082e60fcfe4bd72a99ac73e52f3556ab
+# Source0-md5:	9726dd4f784fcdd819a510e1f1c732d2
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
