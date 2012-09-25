@@ -58,7 +58,6 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
-%update_icon_cache Adwaita
 %update_icon_cache HighContrast
 
 %files -f %{name}.lang
