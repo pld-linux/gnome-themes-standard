@@ -1,17 +1,17 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.5.91
+Version:	3.6.0.1
 Release:	1
 License:	LGPL
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.5/%{name}-%{version}.tar.xz
-# Source0-md5:	9726dd4f784fcdd819a510e1f1c732d2
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.6/%{name}-%{version}.tar.xz
+# Source0-md5:	c30989d28d6c16ed03e6efe2516d5f69
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+3-devel >= 3.4.0
+BuildRequires:	gtk+3-devel >= 3.5.17
 BuildRequires:	intltool >= 0.40
 BuildRequires:	librsvg-devel
 BuildRequires:	libtool
@@ -22,9 +22,7 @@ BuildRequires:	xz
 Requires(post):	gtk-update-icon-cache
 Requires:	gnome-icon-theme >= 3.4.0
 Obsoletes:	gnome-themes-HighContrast < 3.0-1
-Obsoletes:	gnome-themes-HighContrastInverse < 3.0-1
 Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
-Obsoletes:	gnome-themes-LowContrast < 3.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -60,19 +58,14 @@ rm -rf $RPM_BUILD_ROOT
 rm -rf $RPM_BUILD_ROOT
 
 %post
+%update_icon_cache Adwaita
 %update_icon_cache HighContrast
-%update_icon_cache HighContrastInverse
-%update_icon_cache LowContrast
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gtk-3.0/3.0.0/theming-engines/libadwaita.so
 %{_datadir}/themes/Adwaita
 %{_datadir}/themes/HighContrast
-%{_datadir}/themes/HighContrastInverse
-%{_datadir}/themes/LowContrast
 %{_datadir}/gnome-background-properties/adwaita.xml
 %{_iconsdir}/Adwaita
 %{_iconsdir}/HighContrast
-%{_iconsdir}/HighContrastInverse
-%{_iconsdir}/LowContrast
