@@ -2,7 +2,7 @@ Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
 Version:	3.6.2
-Release:	1
+Release:	2
 License:	LGPL
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.6/%{name}-%{version}.tar.xz
@@ -81,7 +81,6 @@ rm -rf $RPM_BUILD_ROOT
 %exclude %{_datadir}/themes/Adwaita/gtk-2.0
 %{_datadir}/themes/HighContrast
 %exclude %{_datadir}/themes/HighContrast/gtk-2.0
-%{_datadir}/gnome-background-properties/adwaita.xml
 %dir %{_iconsdir}/Adwaita
 %{_iconsdir}/Adwaita/cursors
 %dir %{_iconsdir}/HighContrast
@@ -94,3 +93,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gtk-2.0/2.10.0/engines/libadwaita.so
 %{_datadir}/themes/Adwaita/gtk-2.0
 %{_datadir}/themes/HighContrast/gtk-2.0
+%{_datadir}/gnome-background-properties/adwaita.xml
