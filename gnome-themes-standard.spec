@@ -1,12 +1,12 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.6.5
-Release:	2
+Version:	3.8.0
+Release:	1
 License:	LGPL
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.6/%{name}-%{version}.tar.xz
-# Source0-md5:	0053b0680fe8961d4ebc88ede71aca6e
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.8/%{name}-%{version}.tar.xz
+# Source0-md5:	135d2cd61463fd4958da4ee780b83b1a
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -66,15 +66,13 @@ rm -rf $RPM_BUILD_ROOT
 # gtk+2 cache
 touch $RPM_BUILD_ROOT%{_iconsdir}/HighContrast/icon-theme.cache
 
-%find_lang %{name}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_icon_cache HighContrast
 
-%files -f %{name}.lang
+%files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gtk-3.0/3.0.0/theming-engines/libadwaita.so
 %{_datadir}/themes/Adwaita
