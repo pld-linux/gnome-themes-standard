@@ -1,12 +1,12 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.8.0
+Version:	3.8.1
 Release:	1
 License:	LGPL
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.8/%{name}-%{version}.tar.xz
-# Source0-md5:	135d2cd61463fd4958da4ee780b83b1a
+# Source0-md5:	cb1f225abc42a6a1d2299782e023be98
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -51,11 +51,14 @@ look and feel.
 %{__aclocal}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	--disable-silent-rules
+
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
