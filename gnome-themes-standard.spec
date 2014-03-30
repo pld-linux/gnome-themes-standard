@@ -24,6 +24,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post):	gtk-update-icon-cache
 Requires:	gnome-icon-theme >= 3.4.0
+Requires:	gtk+3 >= 3.10.0
 Suggests:	gtk2-theme-engine-adwaita
 Obsoletes:	gnome-themes-HighContrast < 3.0-1
 Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
@@ -36,12 +37,18 @@ Default themes for GNOME environment.
 Domyślne motywy dla środowiska GNOME.
 
 %package -n gtk2-theme-engine-adwaita
-Summary:	Adwaita gtk2 theme
+Summary:	Adwaita GTK+ 2 theme
+Summary(pl.UTF-8):	Motyw Adwaita dla GTK+ 2
 Group:		Themes/GTK+
+Requires:	gtk+2 >= 2:2.24.15
 
 %description -n gtk2-theme-engine-adwaita
-This package contains a gtk2 theme for presenting widgets with a GNOME
-look and feel.
+This package contains a GTK+ 2 theme for presenting widgets with a
+GNOME look and feel.
+
+%description -n gtk2-theme-engine-adwaita -l pl.UTF-8
+Ten pakiet zawiera motyw GTK+ 2 do prezentowania widgetów z wyglądem
+i zachowaniem GNOME.
 
 %prep
 %setup -q
@@ -80,10 +87,15 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gtk-3.0/3.0.0/theming-engines/libadwaita.so
-%{_datadir}/themes/Adwaita
-%exclude %{_datadir}/themes/Adwaita/gtk-2.0
-%{_datadir}/themes/HighContrast
-%exclude %{_datadir}/themes/HighContrast/gtk-2.0
+%dir %{_datadir}/themes/Adwaita
+%{_datadir}/themes/Adwaita/backgrounds
+%{_datadir}/themes/Adwaita/gtk-3.0
+%{_datadir}/themes/Adwaita/metacity-1
+%{_datadir}/themes/Adwaita/index.theme
+%dir %{_datadir}/themes/HighContrast
+%{_datadir}/themes/HighContrast/gtk-3.0
+%{_datadir}/themes/HighContrast/metacity-1
+%{_datadir}/themes/HighContrast/index.theme
 %dir %{_iconsdir}/Adwaita
 %{_iconsdir}/Adwaita/cursors
 %dir %{_iconsdir}/HighContrast
