@@ -1,12 +1,12 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.12.0
+Version:	3.14.0
 Release:	1
 License:	LGPL
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	5036f65f08bbe305ff82c9ab97b2aa3f
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.14/%{name}-%{version}.tar.xz
+# Source0-md5:	fe121e92298b527f6f614050bddd866a
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -23,8 +23,8 @@ BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post):	gtk-update-icon-cache
-Requires:	gnome-icon-theme >= 3.4.0
-Requires:	gtk+3 >= 3.10.0
+Requires:	adwaita-icon-theme
+Requires:	gtk+3 >= 3.14.0
 Suggests:	gtk2-theme-engine-adwaita
 Obsoletes:	gnome-themes-HighContrast < 3.0-1
 Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
@@ -73,7 +73,6 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/2.10.0/engines/libadwaita.la
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/gtk-3.0/3.0.0/theming-engines/libadwaita.la
 
 # gtk+2 cache
 touch $RPM_BUILD_ROOT%{_iconsdir}/HighContrast/icon-theme.cache
@@ -86,9 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/gtk-3.0/3.0.0/theming-engines/libadwaita.so
 %dir %{_datadir}/themes/Adwaita
-%{_datadir}/themes/Adwaita/backgrounds
 %{_datadir}/themes/Adwaita/gtk-3.0
 %{_datadir}/themes/Adwaita/metacity-1
 %{_datadir}/themes/Adwaita/index.theme
@@ -96,8 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/HighContrast/gtk-3.0
 %{_datadir}/themes/HighContrast/metacity-1
 %{_datadir}/themes/HighContrast/index.theme
-%dir %{_iconsdir}/Adwaita
-%{_iconsdir}/Adwaita/cursors
 %dir %{_iconsdir}/HighContrast
 %{_iconsdir}/HighContrast/*x*
 %{_iconsdir}/HighContrast/scalable
@@ -108,7 +103,3 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gtk-2.0/2.10.0/engines/libadwaita.so
 %{_datadir}/themes/Adwaita/gtk-2.0
 %{_datadir}/themes/HighContrast/gtk-2.0
-%{_datadir}/gnome-background-properties/adwaita.xml
-
-# XXX: package here, not to pull libgnome deps
-%dir %{_datadir}/gnome-background-properties
