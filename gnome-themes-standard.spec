@@ -3,7 +3,7 @@ Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
 Version:	3.14.0
 Release:	1
-License:	LGPL
+License:	LGPL v2.1+
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.14/%{name}-%{version}.tar.xz
 # Source0-md5:	fe121e92298b527f6f614050bddd866a
@@ -11,12 +11,12 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cairo-devel
-BuildRequires:	gdk-pixbuf2-devel
+BuildRequires:	gdk-pixbuf2-devel >= 2.0
 BuildRequires:	gettext-devel
 BuildRequires:	gtk+2-devel >= 2:2.24.15
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	intltool >= 0.40
-BuildRequires:	librsvg-devel
+BuildRequires:	librsvg-devel >= 2.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.311
