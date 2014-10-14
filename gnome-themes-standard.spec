@@ -1,8 +1,10 @@
+# TODO
+# - does accessibility themes require base package?
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
 Version:	3.14.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.14/%{name}-%{version}.tar.xz
@@ -26,8 +28,6 @@ Requires(post):	gtk-update-icon-cache
 Requires:	adwaita-icon-theme
 Requires:	gtk+3 >= 3.14.0
 Suggests:	gtk2-theme-engine-adwaita
-Obsoletes:	gnome-themes-HighContrast < 3.0-1
-Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -35,6 +35,17 @@ Default themes for GNOME environment.
 
 %description -l pl.UTF-8
 Domyślne motywy dla środowiska GNOME.
+
+%package accessibility
+Summary:	Accessibility themes for GNOME environment
+Summary(pl.UTF-8):	Motywy uprzystępniające dla środowiska GNOME
+Group:		Themes
+Requires:	%{name} = %{version}-%{release}
+Obsoletes:	gnome-themes-HighContrast < 3.0-1
+Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
+
+%description accessibility
+Accessibility themes for GNOME environment
 
 %package -n gtk2-theme-engine-adwaita
 Summary:	Adwaita GTK+ 2 theme
@@ -47,8 +58,8 @@ This package contains a GTK+ 2 theme for presenting widgets with a
 GNOME look and feel.
 
 %description -n gtk2-theme-engine-adwaita -l pl.UTF-8
-Ten pakiet zawiera motyw GTK+ 2 do prezentowania widgetów z wyglądem
-i zachowaniem GNOME.
+Ten pakiet zawiera motyw GTK+ 2 do prezentowania widgetów z wyglądem i
+zachowaniem GNOME.
 
 %prep
 %setup -q
@@ -67,7 +78,6 @@ i zachowaniem GNOME.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %{__make} install \
 	INSTALL="install -p" \
 	DESTDIR=$RPM_BUILD_ROOT
@@ -80,7 +90,7 @@ touch $RPM_BUILD_ROOT%{_iconsdir}/HighContrast/icon-theme.cache
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
+%post accessibility
 %update_icon_cache HighContrast
 
 %files
@@ -89,6 +99,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/themes/Adwaita/gtk-3.0
 %{_datadir}/themes/Adwaita/metacity-1
 %{_datadir}/themes/Adwaita/index.theme
+
+%files accessibility
+%defattr(644,root,root,755)
 %dir %{_datadir}/themes/HighContrast
 %{_datadir}/themes/HighContrast/gtk-3.0
 %{_datadir}/themes/HighContrast/metacity-1
