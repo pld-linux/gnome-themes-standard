@@ -14,7 +14,7 @@ BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	cairo-devel
 BuildRequires:	gdk-pixbuf2-devel >= 2.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+2-devel >= 2:2.24.15
 BuildRequires:	gtk+3-devel >= 3.10.0
 BuildRequires:	intltool >= 0.40
