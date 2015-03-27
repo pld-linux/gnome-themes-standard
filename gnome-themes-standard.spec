@@ -3,12 +3,12 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.14.2.3
-Release:	2
+Version:	3.16.0
+Release:	1
 License:	LGPL v2.1+
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.14/%{name}-%{version}.tar.xz
-# Source0-md5:	d2af109b0f6b04447d79b10d517cd5fa
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	2dc51388ce1a4452d58b86155201d305
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -97,14 +97,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{_datadir}/themes/Adwaita
 %{_datadir}/themes/Adwaita/gtk-3.0
-%{_datadir}/themes/Adwaita/metacity-1
 %{_datadir}/themes/Adwaita/index.theme
 
 %files accessibility
 %defattr(644,root,root,755)
 %dir %{_datadir}/themes/HighContrast
 %{_datadir}/themes/HighContrast/gtk-3.0
-%{_datadir}/themes/HighContrast/metacity-1
 %{_datadir}/themes/HighContrast/index.theme
 %dir %{_iconsdir}/HighContrast
 %{_iconsdir}/HighContrast/*x*
