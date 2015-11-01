@@ -4,7 +4,7 @@ Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
 Version:	3.18.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.18/%{name}-%{version}.tar.xz
@@ -108,9 +108,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/HighContrast/*x*
 %{_iconsdir}/HighContrast/scalable
 %ghost %{_iconsdir}/HighContrast/icon-theme.cache
+%{_datadir}/themes/HighContrast/gtk-2.0
 
 %files -n gtk2-theme-engine-adwaita
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gtk-2.0/2.10.0/engines/libadwaita.so
 %{_datadir}/themes/Adwaita/gtk-2.0
-%{_datadir}/themes/HighContrast/gtk-2.0
