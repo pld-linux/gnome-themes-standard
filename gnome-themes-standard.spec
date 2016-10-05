@@ -3,12 +3,12 @@
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
-Version:	3.22.1
+Version:	3.22.2
 Release:	1
 License:	LGPL v2.1+
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.22/%{name}-%{version}.tar.xz
-# Source0-md5:	0497b97b03530c76083a03090233867c
+# Source0-md5:	84624dbcecab7add32672abae030314d
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
@@ -98,6 +98,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/themes/Adwaita
 %{_datadir}/themes/Adwaita/gtk-3.0
 %{_datadir}/themes/Adwaita/index.theme
+%dir %{_datadir}/themes/Adwaita-dark
+%{_datadir}/themes/Adwaita-dark/index.theme
 
 %files accessibility
 %defattr(644,root,root,755)
@@ -114,3 +116,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gtk-2.0/2.10.0/engines/libadwaita.so
 %{_datadir}/themes/Adwaita/gtk-2.0
+%{_datadir}/themes/Adwaita-dark/gtk-2.0
