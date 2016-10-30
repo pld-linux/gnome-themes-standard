@@ -4,7 +4,7 @@ Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
 Version:	3.22.2
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.22/%{name}-%{version}.tar.xz
@@ -43,6 +43,9 @@ Group:		Themes
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	gnome-themes-HighContrast < 3.0-1
 Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description accessibility
 Accessibility themes for GNOME environment
