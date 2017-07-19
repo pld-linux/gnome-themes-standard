@@ -41,6 +41,7 @@ Summary:	Accessibility themes for GNOME environment
 Summary(pl.UTF-8):	Motywy uprzystępniające dla środowiska GNOME
 Group:		Themes
 Requires:	%{name} = %{version}-%{release}
+Requires:	adwaita-icon-theme
 Obsoletes:	gnome-themes-HighContrast < 3.0-1
 Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
 %if "%{_rpmversion}" >= "5"
@@ -48,7 +49,10 @@ BuildArch:	noarch
 %endif
 
 %description accessibility
-Accessibility themes for GNOME environment
+Accessibility themes for GNOME environment.
+
+%description accessibility -l pl.UTF-8
+Motywy uprzystępniające dla środowiska GNOME.
 
 %package -n gtk2-theme-engine-adwaita
 Summary:	Adwaita GTK+ 2 theme
