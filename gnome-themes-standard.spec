@@ -1,10 +1,9 @@
-# TODO
-# - does accessibility themes require base package?
+# for versions >= 3.27 see gnome-themes-extra.spec
 Summary:	Default themes for GNOME environment
 Summary(pl.UTF-8):	Domyślne motywy dla środowiska GNOME
 Name:		gnome-themes-standard
 Version:	3.22.3
-Release:	1
+Release:	1.1
 License:	LGPL v2.1+
 Group:		Themes
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-themes-standard/3.22/%{name}-%{version}.tar.xz
