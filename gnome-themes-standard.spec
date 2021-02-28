@@ -43,9 +43,7 @@ Requires:	%{name} = %{version}-%{release}
 Requires:	adwaita-icon-theme
 Obsoletes:	gnome-themes-HighContrast < 3.0-1
 Obsoletes:	gnome-themes-HighContrastLargePrint < 3.0-1
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description accessibility
 Accessibility themes for GNOME environment.
